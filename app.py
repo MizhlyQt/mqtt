@@ -10,6 +10,27 @@ st.write("Versión de Python:", platform.python_version())
 values = 0.0
 act1="OFF"
 
+page_style = """
+<style>
+/* Fondo principal */
+[data-testid="stAppViewContainer"] {
+    background-color: #f5f489;
+}
+
+/* Fondo del sidebar */
+[data-testid="stSidebar"] {
+    background-color: #89f5f5;
+}
+
+/* Color de todos los textos */
+[data-testid="stMarkdownContainer"] {
+    color: #000000;
+}
+</style>
+"""
+
+st.markdown(page_style, unsafe_allow_html=True)
+
 def on_publish(client,userdata,result):             #create function for callback
     print("el dato ha sido publicado \n")
     pass
@@ -30,7 +51,7 @@ client1.on_message = on_message
 
 
 
-st.title("MQTT Control")
+st.title("MQTT Control🎛")
 
 if st.button('ON'):
     act1="ON"
